@@ -1,0 +1,129 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+.description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+.sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2px;
+    background: #ccc;
+    border: 2px solid #333;
+    margin-bottom: 20px;
+}
+.sudoku-cell {
+    aspect-ratio: 1 / 1;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.sudoku-cell input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: bold;
+}
+.sudoku-cell input:focus {
+    background: #e3f2fd;
+}
+/* Thicker borders for 3x3 blocks */
+.sudoku-cell:nth-child(3n) {
+    border-right: 2px solid #333;
+}
+.sudoku-cell:nth-child(9n+1) {
+    border-left: 2px solid #333;
+}
+/* Vertical block separators */
+.sudoku-cell:nth-child(3n) {
+    border-right: 2px solid #333;
+}
+/* Horizontal block separators */
+.sudoku-cell:nth-child(27n+1),
+.sudoku-cell:nth-child(27n+2),
+.sudoku-cell:nth-child(27n+3),
+.sudoku-cell:nth-child(27n+10),
+.sudoku-cell:nth-child(27n+11),
+.sudoku-cell:nth-child(27n+12),
+.sudoku-cell:nth-child(27n+19),
+.sudoku-cell:nth-child(27n+20),
+.sudoku-cell:nth-child(27n+21) {
+    border-top: 2px solid #333;
+}
+.sudoku-cell:nth-child(27n+7),
+.sudoku-cell:nth-child(27n+8),
+.sudoku-cell:nth-child(27n+9),
+.sudoku-cell:nth-child(27n+16),
+.sudoku-cell:nth-child(27n+17),
+.sudoku-cell:nth-child(27n+18),
+.sudoku-cell:nth-child(27n+25),
+.sudoku-cell:nth-child(27n+26),
+.sudoku-cell:nth-child(27n+27) {
+    border-bottom: 2px solid #333;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+button, select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    transition: background 0.2s;
+}
+button:hover, select:hover {
+    background: #0056b3;
+}
+select {
+    background: #28a745;
+}
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+.success {
+    background: #d4edda;
+    color: #155724;
+}
+.info {
+    background: #d1ecf1;
+    color: #0c5460;
+}
